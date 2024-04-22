@@ -4,8 +4,9 @@ import streamlit as st
 def calculate_total_power_consumed(number_of_devices, devices, operation_duration):
     total_power = 0
     for i in range(number_of_devices):
-        power = devices[i]
-        duration = operation_duration[i]
+        device_name = f"Device {i}"
+        power = devices[device_name]
+        duration = operation_duration[device_name]
         power_consumed = power * duration
         total_power += power_consumed
     return total_power
@@ -28,7 +29,7 @@ def main():
     devices = {}
     operation_duration = {}
     for i in range(number_of_devices):
-        device_name = f"Device {i+1}"
+        device_name = f"Device {i}"
         power_rating = st.number_input(
             f"Power rating of {device_name} (in watts)", min_value=0, key=device_name)
         devices[device_name] = power_rating
