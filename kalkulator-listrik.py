@@ -17,7 +17,7 @@ def main():
     devices = {}
     operation_duration = {}
     for i in range(4):
-        device_name = f"Device {i+1} name"
+        device_name = f"Device {i+1}"
         power_rating = st.number_input(
             f"Power rating of {device_name} (in watts)", min_value=0, key=device_name)
         if device_name:
