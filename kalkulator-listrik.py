@@ -39,7 +39,7 @@ def main():
     if st.button("Calculate"):
         tarif_litrik = calculate_tarif_listrik(
             devices, operation_duration, tarif_dasars[selected_tarif_dasar])
-        st.write(f"Tarif listrik: {tarif_litrik}")
+        st.write(f"Tarif listrik: Rp.{tarif_litrik}")
 
 
 if __name__ == "__main__":
