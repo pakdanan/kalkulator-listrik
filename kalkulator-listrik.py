@@ -1,10 +1,9 @@
 import streamlit as st
 
 
-def calculate_total_power_consumed(number_of_devices, devices, operation_duration):
+def calculate_total_power_consumed(devices, operation_duration):
     total_power = 0
-    for i in range(number_of_devices):
-        device_name = f"Device {i}"
+    for device_name in devices:
         power = devices[device_name]
         duration = operation_duration[device_name]
         power_consumed = power * duration
@@ -12,13 +11,13 @@ def calculate_total_power_consumed(number_of_devices, devices, operation_duratio
     return total_power
 
 
-def calculate_total_power_consumed(devices, operation_duration):
-    total_power = 0
-    for device, power in devices.items():
-        duration = operation_duration[device]
-        power_consumed = power * duration
-        total_power += power_consumed
-    return total_power
+# def calculate_total_power_consumed(devices, operation_duration):
+#     total_power = 0
+#     for device, power in devices.items():
+#         duration = operation_duration[device]
+#         power_consumed = power * duration
+#         total_power += power_consumed
+#     return total_power
 
 
 def main():
