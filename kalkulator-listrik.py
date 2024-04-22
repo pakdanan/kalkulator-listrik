@@ -19,7 +19,7 @@ def main():
     for i in range(1, 5):
         device_name = st.text_input(f"Device {i} name")
         power_rating = st.number_input(
-            f"Power rating of {device_name} (in watts)", min_value=0, key=i)
+            f"Power rating of {device_name} (in watts)", min_value=0, key=f"device-{i}")
         if device_name:
             devices[device_name] = power_rating
 
@@ -28,7 +28,7 @@ def main():
     operation_duration = {}
     for device in devices.keys():
         duration = st.number_input(
-            f"Operation duration of {device} (in hours)", min_value=0, key=device)
+            f"Operation duration of {device} (in hours)", min_value=0, key=f"device-duration-{i}")
         operation_duration[device] = duration
 
     # Calculate total power consumed
