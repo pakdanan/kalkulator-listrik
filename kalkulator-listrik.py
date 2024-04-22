@@ -27,8 +27,8 @@ for i in range(number_of_devices):
         f"Durasi {device_name} (jam)", min_value=0, key=f"{device_name}-duration")
     operation_duration[device_name] = duration
 
-tarif_dasars = {"R-1/TR daya 900 VA": 1352,
-                "R-1/TR daya 1.300 VA": 1444.70, "R-1/TR daya 2.200 VA": 1444.70, "R-2/TR daya 3.500-5.500 VA": 1699.53}
+tarif_dasars = {"R-1/TR daya 900 VA": 1352, "R-1/TR daya 1.300 VA": 1444.70, "R-1/TR daya 2.200 VA": 1444.70,
+                "R-2/TR daya 3.500-5.500 VA": 1699.53, "R-3/TR daya 6.600 VA ke atas": 1699.53}
 
 # Selectbox to choose tarif dasar
 selected_tarif_dasar = st.selectbox(
