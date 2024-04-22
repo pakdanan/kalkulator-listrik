@@ -22,8 +22,8 @@ def main():
             f"Power rating of {device_name} (in watts)", min_value=0)
         if device_name:
             devices[device_name] = power_rating
-            duration = st.number_input(f"Operation duration of {
-                                       device_name} (in hours)", min_value=0)
+            duration = st.number_input(
+                f"Operation duration of {device_name} (in hours)", min_value=0)
             operation_duration[device_name] = duration
 
     # Calculate total power consumed
