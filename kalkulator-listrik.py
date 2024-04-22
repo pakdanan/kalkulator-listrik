@@ -36,7 +36,7 @@ selected_tarif_dasar = st.selectbox(
     "Tarif dasar", list(tarif_dasars.keys()))
 
 anggaran_min, anggaran_max = st.slider(
-    "Range Anggaran", min_value=0, max_value=1000, value=(500, 600))
+    "Range Anggaran", min_value=0, max_value=1000, value=(300, 600))
 
 # Calculate tarif listrik
 if st.button("Hitung"):
