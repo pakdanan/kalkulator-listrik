@@ -35,21 +35,18 @@ tarif_dasars = {"R-1/TR daya 900 VA": 1352, "R-1/TR daya 1.300 VA": 1444.70, "R-
 selected_tarif_dasar = st.selectbox(
     "Tarif dasar", list(tarif_dasars.keys()))
 
-# anggaran_listrik_min = st.number_input(f"Anggaran Listrik")
-values = st.slider(
-    'Select a range of values',
-    0.0, 100.0, (25.0, 75.0))
-st.write('Values:', values)
+anggaran_min, anggaran_max = st.slider(
+    "Range Anggaran", min_value=0, max_value=1000, value=(500, 600))
 
 # Calculate tarif listrik
 if st.button("Hitung"):
     tarif_litrik = calculate_tarif_listrik(
         devices, operation_duration, tarif_dasars[selected_tarif_dasar])
-    # Branching conditions to check the range of total power consumed
-    # if tarif_litrik < anggaran_listrik:
-    #     st.info("Konsumsi listrik Anda masih aman")
-    # elif tarif_litrik = anggaran_listrik:
-    #     st.write("Your power consumption is moderate.")
-    # else:
-    #     st.write("Your power consumption is high.")
     st.write(f"Tarif listrik: Rp {tarif_litrik}")
+    # Branching conditions to check the range of tarif listrik
+    if tarif_litrik < anggaran_min:
+        st.info("Konsumsi listrik Anda masih rendah.")
+    elif tarif_litrik >= anggaran_min and tarif_litrik < anggaran_max:
+        st.warning("Konsumsi listrik Anda masih aman namun berhematlah.")
+    else:
+        st.error("Konsumsi listrik Anda sudah diluar batas !")
