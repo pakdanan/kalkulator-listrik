@@ -33,7 +33,7 @@ tarif_dasars = {"R-1/TR daya 900 VA": 1352, "R-1/TR daya 1.300 VA": 1444.70, "R-
 
 # Selectbox to choose tarif dasar
 selected_tarif_dasar = st.selectbox(
-    "Piih tarif dasar", list(tarif_dasars.keys()))
+    "Tarif dasar", list(tarif_dasars.keys()))
 
 # Calculate tarif listrik
 if st.button("Hitung"):
