@@ -8,7 +8,7 @@ def calculate_tarif_listrik(devices, operation_duration, tarif_dasar):
         duration = operation_duration[device_name]
         power_consumed = power * duration
         total_power += power_consumed
-        tarif_listrik = total_power*tarif_dasar/1000
+        tarif_listrik = total_power*tarif_dasar
     return tarif_listrik
 
 
