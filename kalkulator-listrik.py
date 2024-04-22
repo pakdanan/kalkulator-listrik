@@ -2,6 +2,7 @@ import streamlit as st
 
 
 def calculate_tarif_listrik(devices, operation_duration, tarif_dasar):
+    total_power = 0
     for device_name in devices:
         power = devices[device_name]
         duration = operation_duration[device_name]
