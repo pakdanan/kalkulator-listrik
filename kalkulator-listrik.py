@@ -14,7 +14,7 @@ def calculate_tarif_listrik(devices, operation_duration, tarif_dasar):
 
 st.title("Kalkulator tarif listrik")
 
-# Input fields for devices and their power ratings
+# Input fields for devices, their power ratings and durations
 number_of_devices = st.number_input(f"Jumlah perangkat", min_value=1)
 
 devices = {}
@@ -35,8 +35,8 @@ tarif_dasars = {"R-1/TR daya 900 VA": 1352, "R-1/TR daya 1.300 VA": 1444.70, "R-
 selected_tarif_dasar = st.selectbox(
     "Piih tarif dasar", list(tarif_dasars.keys()))
 
-# Calculate total power consumed
-if st.button("Calculate"):
+# Calculate tarif listrik
+if st.button("Hitung"):
     tarif_litrik = calculate_tarif_listrik(
         devices, operation_duration, tarif_dasars[selected_tarif_dasar])
     st.write(f"Tarif listrik: Rp {tarif_litrik}")
