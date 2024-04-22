@@ -11,15 +11,6 @@ def calculate_total_power_consumed(devices, operation_duration):
     return total_power
 
 
-# def calculate_total_power_consumed(devices, operation_duration):
-#     total_power = 0
-#     for device, power in devices.items():
-#         duration = operation_duration[device]
-#         power_consumed = power * duration
-#         total_power += power_consumed
-#     return total_power
-
-
 def main():
     st.title("Total Power Consumed Calculator")
 
