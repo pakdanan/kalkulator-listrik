@@ -38,8 +38,8 @@ def main():
 
     # Calculate total power consumed
     if st.button("Calculate"):
-        total_power = calculate_total_power_consumed(number_of_devices,
-                                                     devices, operation_duration)
+        total_power = calculate_total_power_consumed(
+            devices, operation_duration)
         st.write(f"Total power consumed: {total_power} watt-hours")
 
 
