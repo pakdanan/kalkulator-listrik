@@ -8,7 +8,7 @@ def calculate_tarif_listrik(devices, operation_duration, tarif_dasar):
         duration = operation_duration[device_name]
         power_consumed = power * duration
         total_power += power_consumed
-        tarif_listrik = total_power*tarif_dasar
+        tarif_listrik = total_power*tarif_dasar/1000
     return tarif_listrik
 
 
@@ -38,7 +38,7 @@ def main():
     # Calculate total power consumed
     if st.button("Calculate"):
         tarif_litrik = calculate_tarif_listrik(
-            devices, operation_duration, selected_tarif_dasar)
+            devices, operation_duration, tarif_dasars[selected_tarif_dasar])
         st.write(f"Tarif listrik: {tarif_litrik}")
 
 
