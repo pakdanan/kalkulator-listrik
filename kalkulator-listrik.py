@@ -27,8 +27,8 @@ def main():
     st.header("Operation Durations")
     operation_duration = {}
     for device in devices.keys():
-        duration = st.number_input(f"Operation duration of {
-                                   device} (in hours)", min_value=0)
+        duration = st.number_input(
+            f"Operation duration of {device} (in hours)", min_value=0)
         operation_duration[device] = duration
 
     # Calculate total power consumed
