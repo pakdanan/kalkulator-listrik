@@ -15,11 +15,12 @@ def calculate_tarif_listrik(devices, operation_duration, tarif_dasar):
 st.title("Kalkulator tarif listrik")
 
 # Input fields for devices and their power ratings
-number_of_devices = 3
+number_of_devices = st.number_input(f"Jumlah perangkat", min_value=1)
+
 devices = {}
 operation_duration = {}
 for i in range(number_of_devices):
-    device_name = f"Device {i+1}"
+    device_name = f"Perangkat {i+1}"
     power_rating = st.number_input(
         f"Daya listrik {device_name} (watt)", min_value=0, key=device_name)
     devices[device_name] = power_rating
