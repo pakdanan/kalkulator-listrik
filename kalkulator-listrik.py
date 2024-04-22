@@ -16,7 +16,7 @@ def main():
     # Input fields for devices and their power ratings
     devices = {}
     operation_duration = {}
-    for i in range(4):
+    for i in range(3):
         device_name = f"Device {i+1}"
         power_rating = st.number_input(
             f"Power rating of {device_name} (in watts)", min_value=0, key=device_name)
